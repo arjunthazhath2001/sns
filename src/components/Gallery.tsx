@@ -1,7 +1,7 @@
 import React from 'react';
 import { InfiniteMovingCards } from './ui/infinite-moving-cards';
 
-export default function AdmissionForm() {
+export default function Gallery() {
   const items1 = [
     { image: "/images/image1.png" },
     { image: "/images/image2.png" },

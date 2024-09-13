@@ -9,7 +9,7 @@ export function AppleCardsCarouselDemo() {
   ));
 
   return (
-    <div className="w-full h-full py-20 overflow-hidden">
+    <div className="w-full h-full py-10 overflow-hidden">
       <span className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         Get to know our <span className="text-yellow-500">Milestones.</span>
       </span>
@@ -31,7 +31,7 @@ const data = [
   },
   {
     category: "Family",
-    title: "37,000+ alumnis",
+    title: "37,000+ alumni",
     src: "/images/apple3.png",
   },
   {

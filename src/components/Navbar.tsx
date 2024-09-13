@@ -15,7 +15,7 @@ function Navbar({ className }: { className?: string }) {
                 </MenuItem>
             </Link>
 
-            <Link href={"/about"}>
+            <Link href={"#"}>
                 <MenuItem setActive={setActive} active={active} item="About">
                 <div className="flex flex-col space-y-4 text-sm shadow-none">
                     <HoveredLink href="/web-dev">Our Leaders</HoveredLink>
@@ -27,7 +27,7 @@ function Navbar({ className }: { className?: string }) {
                 </MenuItem>
             </Link>
 
-            <Link href={"/programmes"}>
+            <Link href={"#"}>
                 <MenuItem setActive={setActive} active={active} item="Programmes">
                 <div className="flex flex-col space-y-4 text-sm">
                     <HoveredLink href="/web-dev">Arts & Science</HoveredLink>
@@ -38,7 +38,7 @@ function Navbar({ className }: { className?: string }) {
                 </div>
                 </MenuItem>
             </Link>
-            <Link href={"/careers"}>
+            <Link href={"#"}>
                 <MenuItem setActive={setActive} active={active} item="Careers">
                 <div className="flex flex-col space-y-4 text-sm">
                     <HoveredLink href="/web-dev">Jobs</HoveredLink>
