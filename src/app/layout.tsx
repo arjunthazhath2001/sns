@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 import { DotBackgroundDemo } from "@/components/DotBackground";
 import { Poppins } from "next/font/google";
+import { PlaceholdersAndVanishInputDemo } from "@/components/Search";
 
 // Import Google Poppins font
 const poppins = Poppins({
@@ -49,11 +50,14 @@ export default function RootLayout({
               </div>
 
               {/* Navbar */}
-              <div className="flex-grow flex items-center justify-center">
+              <div className="flex-grow flex">
                 <Navbar />
               </div>
+              
+              <div className="flex-shrink-0 bar">
+                <PlaceholdersAndVanishInputDemo/>
+              </div>
 
-              {/* Mode Toggle */}
               <div className="flex-shrink-0 mode-toggle-container">
                 <ModeToggle />
               </div>

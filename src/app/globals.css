@@ -107,6 +107,12 @@ body {
   left: 60px;
   z-index: 1000;
 }
+.bar {
+  position: fixed;
+  top: 25px;
+  right: 135px;
+  z-index: 2000;
+}
 
 /* For Webkit browsers */
 .hide-scrollbar::-webkit-scrollbar {
