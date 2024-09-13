@@ -97,13 +97,28 @@ body {
 /* globals.css */
 .mode-toggle-container {
   position: fixed;
-  top: 45px;
+  top: 25px;
   right: 60px;
   z-index: 1000;
 }
 .sns {
   position: fixed;
-  top: 45px;
+  top: 25px;
   left: 60px;
   z-index: 1000;
+}
+
+/* For Webkit browsers */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+.hide-scrollbar {
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+/* For Internet Explorer, Edge */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* Disable scrollbar in IE and Edge */
 }

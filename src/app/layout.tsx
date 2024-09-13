@@ -42,7 +42,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <DotBackgroundDemo>
-            <div className="relative w-full flex mx-auto items-center justify-between px-4">
+            <div className="relative w-full flex mx-auto items-center justify-between px-1">
               {/* Logo */}
               <div className="flex-shrink-0 sns">
                 <img src="/images/sns-logo.png" alt="logo" className="w-16" />
