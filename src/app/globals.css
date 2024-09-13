@@ -14,11 +14,10 @@
   }
 }
 
-/* Fallback theme if JavaScript is disabled or theme is still resolving */
+
 html {
   color-scheme: dark;
 }
-
 
 body {
   color: var(--foreground);
