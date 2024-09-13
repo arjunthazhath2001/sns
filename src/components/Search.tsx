@@ -8,7 +8,7 @@ export function PlaceholdersAndVanishInputDemo() {
     "Internships",
     "Admission",
     "UG-Courses",
-    "Blogs",
+    "Search Anything",
     "Brochures",
   ];
 

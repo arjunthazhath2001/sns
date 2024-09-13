@@ -9,7 +9,8 @@ export default function HeroSection() {
   return (
     <HeroHighlight>
       <div className='flex flex-col justify-center items-center'>
-      <motion.h1
+
+      <motion.span
         initial={{ opacity: 0 }} // Start with opacity 0 (invisible)
         animate={{ opacity: 1 }}  // Animate to opacity 1 (fully visible)
         transition={{ duration: 1.5 }} // Control the duration of the fade-in
@@ -18,7 +19,7 @@ export default function HeroSection() {
         First indian institution to patent & implement
         <br />
         <Highlight>design thinking framework in education.</Highlight>
-      </motion.h1>
+      </motion.span>
       <HoverBorderGradient>
         <span>Admission Form</span>
       </HoverBorderGradient>

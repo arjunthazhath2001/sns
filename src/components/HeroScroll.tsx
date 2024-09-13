@@ -18,7 +18,7 @@ export function HeroScrollDemo() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length); // Cycle through images
-    }, 2000); // Change image every 3 seconds (adjust the interval as needed)
+    }, 3000); // Change image every 3 seconds (adjust the interval as needed)
     return () => clearInterval(interval); // Clear interval when component unmounts
   }, [images.length]);
 
