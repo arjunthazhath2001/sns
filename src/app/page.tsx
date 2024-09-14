@@ -3,6 +3,7 @@ import DesignThinking from "@/components/DesignThinking";
 import HeroSection from "@/components/HeroSection";
 import TrackRecord from "@/components/TrackRecord";
 import Gallery from "@/components/Gallery";
+import RecInstitutes from "@/components/RecInstitutes";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <Gallery/>
         <TrackRecord/>
         <DesignThinking/>
+        <RecInstitutes/>
         <ContactSocial/>
       </div>
   );
