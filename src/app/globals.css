@@ -128,3 +128,14 @@ body {
 .hide-scrollbar {
   -ms-overflow-style: none; /* Disable scrollbar in IE and Edge */
 }
+
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
