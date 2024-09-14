@@ -35,6 +35,43 @@ export const InfiniteMovingCards = ({
         }
       });
 
+      const getDirection = () => {
+        if (containerRef.current) {
+          if (direction === "left") {
+            containerRef.current.style.setProperty(
+              "--animation-direction",
+              "forwards"
+            );
+          } else {
+            containerRef.current.style.setProperty(
+              "--animation-direction",
+              "reverse"
+            );
+          }
+        }
+      };
+
+      const getSpeed = () => {
+        if (containerRef.current) {
+          if (speed === "fast") {
+            containerRef.current.style.setProperty(
+              "--animation-duration",
+              "20s"
+            );
+          } else if (speed === "normal") {
+            containerRef.current.style.setProperty(
+              "--animation-duration",
+              "40s"
+            );
+          } else {
+            containerRef.current.style.setProperty(
+              "--animation-duration",
+              "100s"
+            );
+          }
+        }
+      };
+
       getDirection();
       getSpeed();
       setStart(true);
@@ -44,34 +81,6 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation();
   }, [addAnimation]);
-
-  const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
-      } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
-      }
-    }
-  };
-
-  const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "100s");
-      }
-    }
-  };
 
   return (
     <div

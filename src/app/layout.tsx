@@ -6,6 +6,7 @@ import { ModeToggle } from "@/components/ui/ModeToggle";
 import { DotBackgroundDemo } from "@/components/DotBackground";
 import { Poppins } from "next/font/google";
 import { PlaceholdersAndVanishInputDemo } from "@/components/Search";
+import Image from "next/image"; // Import Next.js Image component
 
 // Import Google Poppins font
 const poppins = Poppins({
@@ -33,16 +34,21 @@ export default function RootLayout({
             <div className="relative w-full flex mx-auto items-center justify-between px-1">
               {/* Logo */}
               <div className="flex-shrink-0 sns">
-                <img src="/images/sns-logo.png" alt="logo" className="w-16" />
+                <Image
+                  src="/images/sns-logo.png"
+                  alt="logo"
+                  width={64} // 16 * 4 for 64px width (assuming w-16)
+                  height={64} // Ensure the correct size is maintained
+                />
               </div>
 
               {/* Navbar */}
               <div className="flex-grow flex">
                 <Navbar />
               </div>
-              
+
               <div className="flex-shrink-0 bar">
-                <PlaceholdersAndVanishInputDemo/>
+                <PlaceholdersAndVanishInputDemo />
               </div>
 
               <div className="flex-shrink-0 mode-toggle-container">
