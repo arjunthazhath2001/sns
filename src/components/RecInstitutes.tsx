@@ -1,7 +1,5 @@
 
 import React from 'react';
-import { HoverBorderGradient } from './ui/hover-border-gradient';
-import { Separator } from "@/components/ui/separator"
 import { InfiniteMovingCards } from './ui/infinite-moving-cards';
 import { Highlight } from './ui/hero-highlight';
 

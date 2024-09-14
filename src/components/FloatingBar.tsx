@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
   IconBrandX,
@@ -6,12 +6,7 @@ import {
   IconBrandInstagram,
   IconBrandFacebook,
   IconBrandLinkedin,
-  IconLayoutNavbarCollapse,
 } from "@tabler/icons-react";
-import { AnimatePresence, MotionValue, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-// Demo Component
 export function FloatingDockDemo() {
   const links = [
     {

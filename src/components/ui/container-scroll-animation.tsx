@@ -9,7 +9,7 @@ export const ContainerScroll = ({
   titleComponent: string | React.ReactNode;
   children: React.ReactNode;
 }) => {
-  const containerRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);  // Specify correct type for ref
   const { scrollYProgress } = useScroll({
     target: containerRef,
   });
@@ -54,7 +54,13 @@ export const ContainerScroll = ({
   );
 };
 
-export const Header = ({ translate, titleComponent }: any) => {
+export const Header = ({
+  translate,
+  titleComponent,
+}: {
+  translate: MotionValue<number>;
+  titleComponent: string | React.ReactNode;
+}) => {
   return (
     <motion.div
       style={{
@@ -70,6 +76,7 @@ export const Header = ({ translate, titleComponent }: any) => {
 export const Card = ({
   rotate,
   scale,
+  translate,
   children,
 }: {
   rotate: MotionValue<number>;
@@ -78,20 +85,18 @@ export const Card = ({
   children: React.ReactNode;
 }) => {
   return (
-    // Update the boxShadow for a softer appearance
-<motion.div
-  style={{
-    rotateX: rotate,
-    scale,
-    boxShadow:
-      "0 0 15px rgba(0,0,0,0.15), 0 15px 30px rgba(0,0,0,0.1)", // Reduced sharpness by decreasing opacity
-  }}
-  className="max-w-4xl mx-auto h-[20rem] md:h-[30rem] w-full border-4 border-[#6C6C6C] p-2 md:p-4 bg-[#222222] rounded-[30px] shadow-2xl"
->
-  <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4">
-    {children}
-  </div>
-</motion.div>
-
+    <motion.div
+      style={{
+        rotateX: rotate,
+        scale,
+        boxShadow:
+          "0 0 15px rgba(0,0,0,0.15), 0 15px 30px rgba(0,0,0,0.1)",
+      }}
+      className="max-w-4xl mx-auto h-[20rem] md:h-[30rem] w-full border-4 border-[#6C6C6C] p-2 md:p-4 bg-[#222222] rounded-[30px] shadow-2xl"
+    >
+      <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4">
+        {children}
+      </div>
+    </motion.div>
   );
 };

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState, createContext } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IconArrowNarrowLeft, IconArrowNarrowRight } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
@@ -87,7 +87,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
 export const Card = ({
   card,
-  index,
 }: {
   card: { src: string; title: string; category: string };
   index: number;
