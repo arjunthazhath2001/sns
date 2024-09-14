@@ -16,13 +16,18 @@ export default function HeroSection() {
         transition={{ duration: 1.5 }} // Control the duration of the fade-in
         className="text-3xl font-black text-center leading-relaxed pb-20"
       >
-        First indian institution to patent & implement
+        The first Indian institution to patent & implement
         <br />
         <Highlight>design thinking framework in education.</Highlight>
       </motion.span>
+      <div className='flex flex-row items-center space-x-20'>
       <HoverBorderGradient>
         <span>Admission Form</span>
       </HoverBorderGradient>
+      <HoverBorderGradient>
+        <span>Our Specialities</span>
+      </HoverBorderGradient>
+      </div>
       </div>
     </HeroHighlight>
   );
