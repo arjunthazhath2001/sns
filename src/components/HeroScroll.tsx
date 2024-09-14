@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import Image from "next/image";
@@ -14,16 +14,48 @@ export function HeroScrollDemo() {
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length); // Cycle through images
-    }, 3000); // Change image every 3 seconds (adjust the interval as needed)
-    return () => clearInterval(interval); // Clear interval when component unmounts
+    }, 5000); // Change image every 3 seconds
+    return () => clearInterval(interval);
   }, [images.length]);
 
+  // Intersection Observer to track when the section is visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col overflow-hidden">
+    <motion.div
+      ref={sectionRef}
+      initial={{ opacity: 0, y: 20 }} // Start invisible and slightly lower
+      animate={isVisible ? { opacity: 1, y: 0 } : {}} // Animate when the section is visible
+      transition={{ duration: 0.75 }} // Duration of the fade-in
+      className="flex flex-col overflow-hidden"
+    >
       <ContainerScroll
         titleComponent={
           <>
@@ -58,6 +90,6 @@ export function HeroScrollDemo() {
           </AnimatePresence>
         </div>
       </ContainerScroll>
-    </div>
+    </motion.div>
   );
 }

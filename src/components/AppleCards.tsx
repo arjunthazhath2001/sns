@@ -1,19 +1,53 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { motion } from "framer-motion";
 
 export function AppleCardsCarouselDemo() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  // Intersection Observer to track when the section is visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true); // Set the state to true when the section is in the viewport
+          }
+        });
+      },
+      { threshold: 0.2 } // Adjust the threshold to control when the animation triggers
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
 
   return (
-    <div className="w-full h-full py-10 overflow-hidden">
+    <motion.div
+      ref={sectionRef}
+      initial={{ opacity: 0, y: 20 }} // Start invisible and slightly lower
+      animate={isVisible ? { opacity: 1, y: 0 } : {}} // Animate to visible and move up when the section is visible
+      transition={{ duration: 0.75 }} // Duration of the fade-in
+      className="w-full h-full py-10 overflow-hidden"
+    >
       <span className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         Get to know our <span className="text-yellow-500">Milestones.</span>
       </span>
       <Carousel items={cards} />
-    </div>
+    </motion.div>
   );
 }
 
