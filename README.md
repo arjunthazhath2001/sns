@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+
+ABOUT:
+I rebuilt the homepage of the school where I studied till 2019. The issues identified with the original site is described in the notion doc below:
+https://pinnate-diagnostic-781.notion.site/snsgroups-com-website-renovation-3af15c9ff8164430ad8cc1747b8504c3
+
+
 ## Getting Started
 
 First, run the development server:
