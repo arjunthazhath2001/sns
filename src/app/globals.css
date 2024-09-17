@@ -111,7 +111,7 @@ body {
   position: fixed;
   top: 25px;
   right: 135px;
-  z-index: 2000;
+  z-index: 1000;
 }
 
 /* For Webkit browsers */

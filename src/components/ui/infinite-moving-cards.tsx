@@ -8,7 +8,6 @@ export const InfiniteMovingCards = ({
   items,
   direction = "left",
   speed = "slow",
-  pauseOnHover = true,
   className,
 }: {
   items: {
@@ -16,7 +15,6 @@ export const InfiniteMovingCards = ({
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
-  pauseOnHover?: boolean;
   className?: string;
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -94,8 +92,7 @@ export const InfiniteMovingCards = ({
         ref={scrollerRef}
         className={cn(
           "flex min-w-full shrink-0 gap-2 py-4 w-max flex-nowrap", // Reduced gap
-          start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]"
+          start && "animate-scroll"
         )}
       >
         {items.map((item, idx) => (
