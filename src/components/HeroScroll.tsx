@@ -20,7 +20,7 @@ export function HeroScrollDemo() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length); // Cycle through images
-    }, 5000); // Change image every 3 seconds
+    }, 4000); // Change image every 4 seconds
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -53,7 +53,7 @@ export function HeroScrollDemo() {
       ref={sectionRef}
       initial={{ opacity: 0, y: 20 }} // Start invisible and slightly lower
       animate={isVisible ? { opacity: 1, y: 0 } : {}} // Animate when the section is visible
-      transition={{ duration: 0.75 }} // Duration of the fade-in
+      transition={{ duration: 0.1 }} // Duration of the fade-in
       className="flex flex-col overflow-hidden"
     >
       <ContainerScroll
@@ -75,7 +75,7 @@ export function HeroScrollDemo() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }} // Duration of fade in/out
+              transition={{ duration: 0.75 }} // Duration of fade in/out
               className="absolute inset-0"
             >
               <Image
